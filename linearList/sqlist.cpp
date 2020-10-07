@@ -1,13 +1,7 @@
+#include "sqlist.h"
 #include <stdio.h>
 #include <stdlib.h>
-#define Maxsize 50
-typedef int ElemType;
 
-typedef struct
-{
-    ElemType data[Maxsize];
-    int length;
-} SqList;
 
 //1.创建顺序表
 void CreateList(SqList *&L, ElemType a[], int n)
@@ -102,25 +96,4 @@ bool ListDelete(SqList *&L, int i, ElemType &e)
     }
     L->length--;
     return true;
-}
-
-int main()
-{
-    SqList *L;
-    ElemType e;
-    int a[5] = {1, 2, 3, 4, 5};
-    InitList(L);
-    CreateList(L, a, 5);
-    DisplayList(L);
-    printf("%d\n", LocateElem(L, 2));
-    GetElem(L, e, 3);
-    printf("%d\n", e);
-    ListInsert(L, 6, 6);
-    DisplayList(L);
-    ListDelete(L, 1, e);
-    DisplayList(L);
-    printf("%d\n", e);
-    DestoryList(L);
-
-    return 0;
 }
