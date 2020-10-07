@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 //1.创建顺序表
 void CreateList(SqList *&L, ElemType a[], int n)
 {
@@ -96,4 +95,37 @@ bool ListDelete(SqList *&L, int i, ElemType &e)
     }
     L->length--;
     return true;
+}
+
+//顺序表的应用示例1 删除所有值等于x的元素，时间复杂度为O(n),空间复杂度为O(1)
+void delnode1(SqList *&L, ElemType x)
+{
+    int k = 0, i; //k记录不等于x的元素个数，即要插入到L中的元素个数
+    for (i = 0; i < L->length; i++)
+    {
+        if (L->data[i] != x)
+        { //如果data值不等于x
+            L->data[k] = L->data[i];
+            k++;
+        }
+    }
+    L->length = k;
+}
+
+//顺序表的应用示例2 删除所有值等于x的元素，时间复杂度为O(n),空间复杂度为O(1)
+void delnode2(SqList *&L, ElemType x)
+{
+    int k=0, i;
+    for (i = 0; i < L->length; i++)
+    {
+        if (L->data[i] == x)
+        {
+            k++;
+        }else
+        {
+            L->data[i-k]=L->data[i];
+        }
+    }
+    L->length-=k;
+
 }

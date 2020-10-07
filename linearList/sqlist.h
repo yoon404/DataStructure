@@ -36,4 +36,10 @@ bool ListInsert(SqList *&L, int i, ElemType e);
 //9.删除数据元素
 bool ListDelete(SqList *&L, int i, ElemType &e);
 
+//顺序表的应用示例1 删除所有值等于x的元素，时间复杂度为O(n),空间复杂度为O(1)
+void delnode1(SqList *&L, ElemType x);
+
+//顺序表的应用示例2 删除所有值等于x的元素，时间复杂度为O(n),空间复杂度为O(1)
+void delnode2(SqList *&L, ElemType x);
+
 #endif
