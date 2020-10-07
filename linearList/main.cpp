@@ -3,6 +3,7 @@
 
 int main()
 {
+    int aaa;
     SqList *L;
     ElemType e;
     int a[5] = {1, 2, 3, 4, 5};
