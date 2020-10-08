@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<windows.h>
 #include "sqlist.h"
 
 int main()
@@ -40,6 +41,5 @@ int main()
 
     //销毁线性表
     DestoryList(L);
-
     return 0;
 }

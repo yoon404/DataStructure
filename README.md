@@ -10,7 +10,7 @@
 由于使用了多个文件编译
 因此终端运行命令为  
 
-> gcc -c mian.cpp xxx.cpp 类推  
+> gcc -c main.cpp xxx.cpp 类推  
 > gcc -o main main.o xxx.o 类推  
 
 例如  
