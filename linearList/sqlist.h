@@ -42,4 +42,12 @@ void delnode1(SqList *&L, ElemType x);
 //顺序表的应用示例2 删除所有值等于x的元素，时间复杂度为O(n),空间复杂度为O(1)
 void delnode2(SqList *&L, ElemType x);
 
+/*顺序表的应用示例：顺序表L，以第一个元素为基准
+将所有小于等于它的元素移动到该基准的前面，将所有大于他的元素移动到后面(分治)*/
+int partition1(SqList *&L);
+
+
+//交换函数
+swap(int &a,int &b);
+
 #endif
