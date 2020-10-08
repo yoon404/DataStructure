@@ -44,10 +44,19 @@ void delnode2(SqList *&L, ElemType x);
 
 /*顺序表的应用示例：顺序表L，以第一个元素为基准
 将所有小于等于它的元素移动到该基准的前面，将所有大于他的元素移动到后面(分治)*/
-int partition1(SqList *&L);
+void partition1(SqList *&L);
 
+/*顺序表的应用示例：顺序表L，以第一个元素为基准
+将所有小于等于它的元素移动到该基准的前面，将所有大于他的元素移动到后面(分治)*/
+void partition2(SqList *&L);
+
+//顺序表的应用示例 所有奇数移动到偶数前面
+void move1(SqList *&L);
+
+//顺序表的应用示例 所有奇数移动到偶数前面
+void move2(SqList *&L);
 
 //交换函数
-swap(int &a,int &b);
+void swap(int &a,int &b);
 
 #endif
