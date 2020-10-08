@@ -14,4 +14,7 @@
 > gcc -o main main.o xxx.o 类推  
 
 例如  
+***  
+![Aaron Swartz](https://raw.githubusercontent.com/YoonLimtse/DataStructure/master/RES/example.png)  
+***  
 具体指令可参考[csdn博客](https://blog.csdn.net/czg13548930186/article/details/78331692)  
