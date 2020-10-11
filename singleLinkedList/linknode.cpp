@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 //创建单链表----头插法
-void CreateListF(LinkNode *&L, Elemtype a[], int n)
+void CreateListF(LinkNode *&L, ElemType a[], int n)
 {
     LinkNode *p;
     L = (LinkNode *)malloc(sizeof(LinkNode));
@@ -18,7 +18,7 @@ void CreateListF(LinkNode *&L, Elemtype a[], int n)
 }
 
 //创建单链表----尾插法
-void CreateListR(LinkNode *&L, Elemtype a[], int n)
+void CreateListR(LinkNode *&L, ElemType a[], int n)
 {
     LinkNode *p, *r;
     L = (LinkNode *)malloc(sizeof(LinkNode));
@@ -51,4 +51,56 @@ void DestoryList(LinkNode *&L)
         p = pre->next;
     }
     free(pre);
+}
+
+//判断线性表是否为空表
+bool ListEmpty(LinkNode *L)
+{
+    return L->next == NULL;
+}
+
+//求线性表的长度
+int ListLength(LinkNode *L)
+{
+    int n = 0;
+    LinkNode *p = L;
+    while (p->next != NULL)
+    {
+        n++;
+        p = p->next;
+    }
+    return (n);
+}
+
+//输出线性表
+void DispList(LinkNode *L)
+{
+    LinkNode *p = L->next;
+    while (p != NULL)
+    {
+        printf("%d ", p->data);
+        p = p->next;
+    }
+    printf("\n");
+}
+
+//求线性表的某个数据元素值
+bool GetElem(LinkNode *L, int i, ElemType &e)
+{
+    int j = 0;
+    LinkNode *p = L;
+    if (i <= 0)
+        return false;
+
+    while (p->next != NULL)
+    {
+        if (i == ++j)
+        {
+            e = p->next->data;
+            return true;
+        }
+        p = p->next;
+        j++;
+    }
+    return false;
 }
