@@ -87,20 +87,27 @@ void DispList(LinkNode *L)
 //求线性表的某个数据元素值
 bool GetElem(LinkNode *L, int i, ElemType &e)
 {
-    int j = 0;
-    LinkNode *p = L;
+    int j = 1;
+    LinkNode *p = L->next;
     if (i <= 0)
         return false;
 
-    while (p->next != NULL)
+    while (p != NULL)
     {
-        if (i == ++j)
+        if (i == j)
         {
-            e = p->next->data;
+            e = p->data;
             return true;
         }
         p = p->next;
         j++;
     }
     return false;
+}
+
+//按元素值查找
+int LocateElem(LinkNode *L, ElemType e)
+{
+    int i = 1;
+    return i;
 }

@@ -33,4 +33,7 @@ void DispList(LinkNode *L);
 //求线性表的某个数据元素值
 bool GetElem(LinkNode *L, int i, ElemType &e);
 
+//按元素值查找
+int LocateElem(LinkNode *L,ElemType e);
+
 #endif
