@@ -4,7 +4,7 @@
 
 int main()
 {
-    LinkNode *L;
+    LinkNode *L,*L1,*L2;
     ElemType e;
     int a[10] = {3, 8, 2, 7, 1, 5, 3, 4, 6, 0};
     InitList(L);
@@ -42,7 +42,11 @@ int main()
         printf("É¾³ýÔªËØ´íÎó£¡\n");
         printf("------------\n");
     }
-
+    split(L,L1,L2);
+    DispList(L);
+    DispList(L1);
+    DispList(L2);
+    printf("------------\n");
     DestoryList(L);
     return 0;
 }
