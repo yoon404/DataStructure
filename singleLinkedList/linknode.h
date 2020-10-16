@@ -36,4 +36,13 @@ bool GetElem(LinkNode *L, int i, ElemType &e);
 //按元素值查找
 int LocateElem(LinkNode *L,ElemType e);
 
+//往第i个位置插入数据元素
+bool ListInsert(LinkNode *&L, int i, ElemType e);
+
+//删除数据元素
+bool ListDelete(LinkNode *&L, int i, ElemType &e);
+
+//SingleLinkedList Application:有一个带头结点的单链表L，将其拆分为两个带头结点的单链表L1和L2
+void split(LinkNode *&L, LinkNode *&L1, LinkNode *&L2);
+
 #endif

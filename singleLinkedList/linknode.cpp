@@ -109,5 +109,80 @@ bool GetElem(LinkNode *L, int i, ElemType &e)
 int LocateElem(LinkNode *L, ElemType e)
 {
     int i = 1;
-    return i;
+    LinkNode *p = L->next;
+    while (p != NULL)
+    {
+        if (p->data == e)
+        {
+            return i;
+        }
+        i++;
+        p = p->next;
+    }
+    return 0;
+}
+
+//往第i个位置插入数据元素
+bool ListInsert(LinkNode *&L, int i, ElemType e)
+{
+    int j = 1;
+    if (i <= 0)
+        return false;
+    LinkNode *p = L, *s;
+    while (p != NULL)
+    {
+        if (i == j)
+        {
+            s = (LinkNode *)malloc(sizeof(LinkNode));
+            s->data = e;
+            s->next = p->next;
+            p->next = s;
+            return true;
+        }
+        p = p->next;
+        j++;
+    }
+    return false;
+}
+
+//删除数据元素
+bool ListDelete(LinkNode *&L, int i, ElemType &e)
+{
+    LinkNode *p = L, *q = p->next;
+    int j = 1;
+    while (q != NULL)
+    {
+        if (i == j)
+        {
+            e = q->data;
+            p->next = q->next;
+            free(q);
+            return true;
+        }
+        p = q;
+        q = p->next;
+        j++;
+    }
+    return false;
+}
+
+//SingleLinkedList Application:有一个带头结点的单链表L，将其拆分为两个带头结点的单链表L1和L2
+void split(LinkNode *&L, LinkNode *&L1, LinkNode *&L2)
+{
+    LinkNode *p = L->next, *q = p->next, *r1;
+    L1 = L;
+    r1 = L1;
+    L2 = (LinkNode *)malloc(sizeof(LinkNode));
+    L2->next = NULL;
+    while (p != NULL)
+    {
+        r1->next = p;
+        r1 = p;
+        p = q;
+        q = p->next;
+        p->next = L2->next;
+        L2->next = p;
+        p = q;
+    }
+    r1->next = NULL;
 }
