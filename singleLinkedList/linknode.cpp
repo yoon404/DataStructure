@@ -169,7 +169,7 @@ bool ListDelete(LinkNode *&L, int i, ElemType &e)
 //SingleLinkedList Application:有一个带头结点的单链表L，将其拆分为两个带头结点的单链表L1和L2
 void split(LinkNode *&L, LinkNode *&L1, LinkNode *&L2)
 {
-    LinkNode *p = L->next, *q , *r1;
+    LinkNode *p = L->next, *q, *r1;
     L1 = L;
     r1 = L1;
     L2 = (LinkNode *)malloc(sizeof(LinkNode));
